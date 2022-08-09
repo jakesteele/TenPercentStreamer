@@ -36,5 +36,6 @@ videoEncoder.MaxBitrate = 6500; // Recommended value depends on frame rate and r
 
 ## Docker Setup
 - docker build -t tenpercent-streamer -f Dockerfile .
+- for Mac M1 chips:  DOCKER_DEFAULT_PLATFORM=linux/amd64 docker build -t tenpercent-streamer Dockerfile .
 - docker run -it --rm tenpercent-streamer 
 
