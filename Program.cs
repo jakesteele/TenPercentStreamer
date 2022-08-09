@@ -117,7 +117,9 @@ try
     await videoSource.Start();
     await connection.Open();
     #endregion
-    Console.ReadKey();
+    while(true){
+        Thread.Sleep(5000);
+    }
 } catch(Exception ex)
 {
     FM.LiveSwitch.Log.Error("Error in application.", ex);
