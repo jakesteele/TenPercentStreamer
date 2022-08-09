@@ -35,6 +35,12 @@ videoEncoder.MaxBitrate = 6500; // Recommended value depends on frame rate and r
 ```
 
 ## Docker Setup
-- docker build -t tenpercent-streamer -f Dockerfile .
+- docker build -t tenpercent-streamer -t tenpercent-streamer .
+- for Mac M1 chips:  DOCKER_DEFAULT_PLATFORM=linux/amd64 docker build -t tenpercent-streamer .
 - docker run -it --rm tenpercent-streamer 
 
+## Deploy to AWS
+- Log in: docker login --username AWS  237903779387.dkr.ecr.us-east-1.amazonaws.com/liveswitch-cognitive-services-speech-to-text
+- Build (see above)
+- Tag: docker tag tenpercent-streamer 237903779387.dkr.ecr.us-east-1.amazonaws.com/tenpercent-streamer
+- Push: docker push 237903779387.dkr.ecr.us-east-1.amazonaws.com/tenpercent-streamer:latest 
